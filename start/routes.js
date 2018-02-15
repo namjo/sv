@@ -17,7 +17,8 @@ const Route = use('Route')
 
 Route.on('/').render('welcome')
 
+Route.get('users', 'UserController.index')
 Route.post('users', 'UserController.store')
 Route.get('users/:id', 'UserController.show')
 
-Route.post('login', 'UserController.login')
+Route.post('login', 'LoginController.login')

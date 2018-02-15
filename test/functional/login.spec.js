@@ -11,7 +11,10 @@ suite.before(async () => {
   user = await User.create({
     username: 'jon',
     email: 'jon@doe.com',
-    password: 'secret'
+    password: 'secret',
+    first: 'Jon',
+    last: 'Doe',
+    role: 'admin'
   })
 })
 
@@ -22,7 +25,7 @@ suite.after(async () => {
 
 trait('Test/ApiClient')
 
-test('test login', async ({ client }) => {
+test('login mechanism', async ({ client }) => {
   const response = await client.post('/login').send({
     email: 'jon@doe.com',
     password: 'secret'
